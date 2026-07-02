@@ -1,0 +1,58 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Credenciales y secretos (NUNCA subir)
+.env
+.env.local
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+id_rsa
+id_ed25519
+*_cookies.txt
+cookies/
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Claude Skill - archivos personales del usuario (no compartir)
+downloaded/
+cookies/
+*_cookies.txt
+
+# Caché de skills
+.cache/
+skill-cache/
+
+# Archivos de configuración personal (si aplica)
+config.local.json
+settings.local.json
+
+# Archivos generados en uso (no en desarrollo)
+output/
+results/

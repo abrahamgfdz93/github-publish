@@ -1,0 +1,32 @@
+# Python entornos virtuales
+venv/
+env/
+.venv/
+.env/
+
+# Python caché
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python builds
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Python testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Python type checking
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Jupyter
+.ipynb_checkpoints/

@@ -1,0 +1,16 @@
+# Claude Skill - archivos personales del usuario (no compartir)
+downloaded/
+cookies/
+*_cookies.txt
+
+# Caché de skills
+.cache/
+skill-cache/
+
+# Archivos de configuración personal (si aplica)
+config.local.json
+settings.local.json
+
+# Archivos generados en uso (no en desarrollo)
+output/
+results/
