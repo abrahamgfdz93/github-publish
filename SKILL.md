@@ -317,6 +317,23 @@ Si el proyecto es Claude skill, preguntar además:
 
 Si s, ejecutar `$DEST_DIR/install.sh` para completar instalación local.
 
+### Paso 11: Documentar en Confluence
+
+Preguntar al usuario:
+
+> "¿Quieres crear la página de documentación en Confluence? (s/n)"
+
+Si s:
+1. Leer el README.md generado y el SKILL.md (si existe) del proyecto publicado
+2. Crear la página en Confluence con `createConfluencePage`:
+   - `cloudId`: `lager.atlassian.net`
+   - `spaceId`: `21004291` (espacio LTI — Lagersoft Engineering)
+   - `parentId`: `219676674` (carpeta "Skills Diseño")
+   - `title`: `<REPO_NAME> — Skill Claude Code`
+   - `contentFormat`: `html`
+   - Contenido con estas secciones: Descripción, Qué hace, Instalación, Cómo usarlo, Requisitos, Archivos clave, Notas técnicas
+3. Mostrar el link directo a la página creada en Confluence
+
 ---
 
 ## Flujo B: Actualización de proyecto ya publicado
@@ -396,6 +413,18 @@ git push
 ✅ Actualizado en GitHub
 Últimos commits: https://github.com/<GITHUB_USER>/<REPO_NAME>/commits/main
 ```
+
+### Paso 9b: Actualizar en Confluence
+
+Preguntar al usuario:
+
+> "¿Quieres actualizar también la página de documentación en Confluence? (s/n)"
+
+Si s:
+1. Buscar la página existente con `searchConfluenceUsingCql`: `title = "<REPO_NAME> — Skill Claude Code" AND space = "LTI"`
+2. Si existe → actualizarla con `updateConfluencePage` usando el contenido regenerado del README actual
+3. Si no existe → crearla con `createConfluencePage` (mismos parámetros que en Flujo A, Paso 11)
+4. Mostrar el link directo a la página en Confluence
 
 ---
 
