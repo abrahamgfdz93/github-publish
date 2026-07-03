@@ -355,6 +355,23 @@ rsync -a --exclude='.git' \
 
 Para proyectos Python, el usuario edita directamente en `$DEST_DIR` (que es la misma ubicación que `$SOURCE_DIR` en estos casos), así que no hay que copiar nada.
 
+### Paso 4b-extra: Verificar si el README necesita actualizarse
+
+Antes de mostrar los cambios, revisar si `SKILL.md` fue modificado comparado con el último commit:
+
+```bash
+cd "$DEST_DIR"
+SKILL_CHANGED=$(git diff --name-only HEAD 2>/dev/null | grep -c "SKILL.md" || git status --short | grep -c "SKILL.md")
+```
+
+Si `SKILL_CHANGED > 0` (SKILL.md tiene cambios):
+- Leer el `SKILL.md` actualizado y el `README.md` actual
+- Analizar qué secciones del README ya no reflejan la funcionalidad real
+- Actualizar el `README.md` para que quede consistente con el `SKILL.md` (mismas features, mismos casos de uso, mismos requisitos)
+- Usar el Write tool para guardar el README actualizado en `$DEST_DIR/README.md`
+
+Si `SKILL_CHANGED = 0`: no tocar el README.
+
 ### Paso 5b: Mostrar cambios detectados
 
 ```bash

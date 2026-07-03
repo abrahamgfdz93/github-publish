@@ -8,7 +8,7 @@ Skill de Claude Code que publica un proyecto local a GitHub como repo público �
 - **Detecta el tipo de proyecto** (claude-skill / python / genérico) y adapta los archivos que genera.
 - Genera automáticamente **README.md**, **LICENSE (MIT)**, **`.gitignore`** e **`install.sh`** a partir de plantillas.
 - **Escanea secretos** (API keys, tokens, llaves privadas) y archivos grandes antes de subir, y te muestra un preview para confirmar.
-- **Modo actualización:** en repos ya publicados detecta los cambios, propone el mensaje de commit y hace push.
+- **Modo actualización:** en repos ya publicados detecta los cambios, propone el mensaje de commit y hace push. Si `SKILL.md` cambió, actualiza el `README.md` automáticamente para mantener ambos consistentes.
 - **Integración Confluence:** al terminar pregunta si quieres crear o actualizar la página de documentación en Confluence automáticamente.
 
 ## 🎯 Casos de uso
